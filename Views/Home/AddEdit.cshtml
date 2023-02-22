@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Add/Edit Task";
+}
+
+@model Mission8_2_5.Models.*InsertModelNameHere*
+
+<div class="text-center">
+    <h1 class="display-4">Add or Edit a task:</h1>
+</div>
+
+<div>
+    <form method="post">
+
+        <label asp-for="task">Task:</label>
+        <input asp-for="task" /><br />
+
+        <label asp-for="dueDate">Due Date:</label>
+        <input asp-for="dueDate" /><br />
+
+        <label asp-for="quadrant">Quadrant:</label>
+        <input asp-for="quadrant" /><br />
+
+
+        <label asp-for="category">Category:</label>
+        <select asp-for="category">
+            <option value="1">Home</option>
+            <option value="2">School</option>
+            <option value="3">Work</option>
+            <option value="4">Church</option>
+        </select>
+        <br />
+
+        <label asp-for="completed">Completed:</label>
+        <select asp-for="completed">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+        <br />
+
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
