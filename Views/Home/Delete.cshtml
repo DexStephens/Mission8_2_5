@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Confirm Deletion";
+}
+
+@model Task
+
+<h2>Confirm Task Deletion</h2>
+<h3>Are you sure you want to delete @Model.Task from your list?</h3>
+<h4>You can also mark tasks as complete, which will remove them from display</h4>
+
+<form method="post" asp-action="Delete">
+    <button class="btn" type="submit">Delete</button>
+    <a class="btn btn-primary" asp-controller="Home" asp-action="Quadrants">Cancel</a>
+
+    @* Create hidden field for the task ID *@
+    <input type="hidden" asp-for="TaskId" />
+</form>
