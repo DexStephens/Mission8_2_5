@@ -29,10 +29,42 @@
         <div class="col-5">
             <h3>Quadrant 1</h3>
             @* Display Quadrant 1 Tasks Here *@
+            @foreach (var x in Model)
+            {
+                @if (x.quadrant == 1)
+                {
+                    @if (x.completed == false)
+                    {
+                    <div>
+                        <p>
+                            @x.TaskName | Due: @x.dueDate |
+                            <a asp-controller="Home" asp-action="AddEdit" asp-route-id="@x.TaskId">Edit</a> |
+                            <a asp-controller="Home" asp-action="DeleteTask" asp-route-id="@x.TaskId">Delete</a>
+                        </p>
+                    </div>
+                    }
+                }
+            }
         </div>
         <div class="col-5">
             <h3>Quadrant 2</h3>
             @* Display Quadrant 2 Tasks Here *@
+            @foreach (var x in Model)
+            {
+                @if (x.quadrant == 2)
+                {
+                    @if (x.completed == false)
+                    {
+                        <div>
+                            <p>
+                                @x.TaskName | Due: @x.dueDate |
+                                <a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a> |
+                                <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                            </p>
+                        </div>
+                    }
+                }
+            }
         </div>
     </div>
     <div class="row">
@@ -42,10 +74,42 @@
         <div class="col-5">
             <h3>Quadrant 3</h3>
             @* Display Quadrant 3 Tasks Here *@
+            @foreach (var x in Model)
+            {
+                @if (x.quadrant == 3)
+                {
+                    @if (x.completed == false)
+                    {
+                        <div>
+                            <p>
+                                @x.TaskName | Due: @x.dueDate |
+                                <a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a> |
+                                <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                            </p>
+                        </div>
+                    }
+                }
+            }
         </div>
         <div class="col-5">
             <h3>Quadrant 4</h3>
             @* Display Quadrant 4 Tasks Here *@
+            @foreach (var x in Model)
+            {
+                @if (x.quadrant == 4)
+                {
+                    @if (x.completed == false)
+                    {
+                        <div>
+                            <p>
+                                @x.TaskName | Due: @x.dueDate |
+                                <a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a> |
+                                <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                            </p>
+                        </div>
+                    }
+                }
+            }
         </div>
     </div>
 </div>
