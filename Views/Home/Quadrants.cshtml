@@ -40,8 +40,8 @@
                     {
                         <p>
                             @x.TaskName | Category: @x.Category.categoryName | Due: @x.dueDate |
-                            <a asp-controller="Home" asp-action="AddEdit" asp-route-taskName="@x.TaskName">Edit</a> |
-                            <a asp-controller="Home" asp-action="DeleteTask" asp-route-taskName="@x.TaskName">Delete</a>
+                            <a asp-controller="Home" asp-action="AddEdit" asp-route-taskId="@x.TaskId">Edit</a> |
+                            <a asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
                         </p>
                     }
                     </div>
@@ -61,8 +61,8 @@
                         <div>
                             <p>
                                 @x.TaskName | Category: @x.Category.categoryName | Due: @x.dueDate |
-                                <a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a> |
-                                <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                                <a asp-controller="Home" asp-action="AddEdit" asp-route-taskId="@x.TaskId">Edit</a> |
+                                <a asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
                             </p>
                         </div>
                     }
@@ -86,8 +86,8 @@
                         <div>
                             <p>
                                 @x.TaskName | Category: @x.Category.categoryName | Due: @x.dueDate |
-                                <a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a> |
-                                <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                                <a asp-controller="Home" asp-action="AddEdit" asp-route-taskId="@x.TaskId">Edit</a> |
+                                <a asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
                             </p>
                         </div>
                     }
@@ -106,8 +106,8 @@
                         <div>
                             <p>
                                 @x.TaskName | Category: @x.Category.categoryName | Due: @x.dueDate |
-                                <a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a> |
-                                <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                                <a asp-controller="Home" asp-action="AddEdit" asp-route-taskId="@x.TaskId">Edit</a> |
+                                <a asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
                             </p>
                         </div>
                     }

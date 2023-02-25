@@ -31,13 +31,13 @@ namespace Mission8_2_5.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddEdit(string? taskName)
+        public IActionResult AddEdit(int? taskId)
         {
             ViewBag.Categories = _taskSubmissionContext.categories.ToList();
             var task = new Task();
-            if (taskName != null)
+            if (taskId != null)
             {
-                task = _taskSubmissionContext.tasks.Single(x => x.TaskName == taskName);
+                task = _taskSubmissionContext.tasks.Single(x => x.TaskId == taskId);
             }
             return View(task);
         }
@@ -49,18 +49,22 @@ namespace Mission8_2_5.Controllers
             {
                 try
                 {
-                    Task oldTask = _taskSubmissionContext.tasks.Single(x => x.TaskId == task.TaskId);
-                    _taskSubmissionContext.Update(task);
+                    if (task.TaskId == 0)
+                    {
+                        _taskSubmissionContext.Add(task);
+                    }
+                    else
+                    {
+                        _taskSubmissionContext.Update(task);
+                    }
+                    _taskSubmissionContext.SaveChanges();
+                    return RedirectToAction("Quadrants");
                 }
                 catch
                 {
-                    _taskSubmissionContext.Add(task);
+                    ViewBag.Categories = _taskSubmissionContext.tasks.ToList();
+                    return View("AddEdit", task);
                 }
-                finally
-                {
-                    _taskSubmissionContext.SaveChanges();
-                }
-                return RedirectToAction("Quadrants");
             }
             else
             {
@@ -70,18 +74,17 @@ namespace Mission8_2_5.Controllers
         }
 
         [HttpGet]
-        public IActionResult DeleteTask(string taskName)
+        public IActionResult Delete(int taskId)
         {
-            Task taskToDelete = _taskSubmissionContext.tasks.Single(x => x.TaskName == taskName);
+            Task taskToDelete = _taskSubmissionContext.tasks.Single(x => x.TaskId == taskId);
             return View(taskToDelete);
         }
 
         [HttpPost]
-        public IActionResult DeleteTask(int taskId)
+        public IActionResult Delete(Task taskToDelete)
         {
             try
             {
-                Task taskToDelete = _taskSubmissionContext.tasks.Single(x => x.TaskId == taskId);
                 _taskSubmissionContext.tasks.Remove(taskToDelete);
                 _taskSubmissionContext.SaveChanges();
 
