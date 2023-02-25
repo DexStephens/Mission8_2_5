@@ -28,24 +28,21 @@
         </div>
         <div class="col-5">
             <h3>Quadrant 1</h3>
-            @* Display Quadrant 1 Tasks Here *@
+            @* Display Quadrant 2 Tasks Here *@
             @foreach (var x in Model)
             {
                 @if (x.quadrant == 1)
-                {        
-                    <div>
-                    <label>Complete?</label>
-                    <input type="checkbox" value="@x.completed"><br />
+                {
                     @if (x.completed == false)
                     {
-                        <p>
-                            @x.TaskName | Category: @x.Category.categoryName | Due: @x.dueDate |
-                            <a asp-controller="Home" asp-action="AddEdit" asp-route-taskId="@x.TaskId">Edit</a> |
-                            <a asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
-                        </p>
+                        <div>
+                            <p>
+                                @x.TaskName | Category: @x.Category.categoryName | Due: @x.dueDate |
+                                <a asp-controller="Home" asp-action="AddEdit" asp-route-taskId="@x.TaskId">Edit</a> |
+                                <a asp-controller="Home" asp-action="Delete" asp-route-taskId="@x.TaskId">Delete</a>
+                            </p>
+                        </div>
                     }
-                    </div>
-                    
                 }
             }
         </div>
