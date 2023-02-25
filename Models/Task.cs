@@ -12,7 +12,7 @@ namespace Mission8_2_5.Models
         [Required]
         public int TaskId { get; set; }
         [Required]
-        public string task { get; set; }
+        public string TaskName { get; set; }
         public string dueDate { get; set; }
         [Required]
         public int quadrant { get; set; }

@@ -34,7 +34,7 @@ namespace Mission8_2_5.Models
                     TaskId = 1, 
                     CategoryId = 1,
 
-                    task = "Apply for internships",
+                    TaskName = "Apply for internships",
                     dueDate = "2023-01-01",
                     quadrant = 3,
                     completed = false
@@ -45,7 +45,7 @@ namespace Mission8_2_5.Models
                     TaskId = 2,
                     CategoryId = 2,
 
-                    task = "Finish Mission 8",
+                    TaskName = "Finish Mission 8",
                     dueDate = "2023-02-24",
                     quadrant = 2,
                     completed = false

@@ -37,7 +37,7 @@ namespace Mission8_2_5.Controllers
             var task = new Task();
             if (taskName != null)
             {
-                task = _taskSubmissionContext.tasks.Single(x => x.task == taskName);
+                task = _taskSubmissionContext.tasks.Single(x => x.TaskName == taskName);
             }
             return View(task);
         }
@@ -72,7 +72,7 @@ namespace Mission8_2_5.Controllers
         [HttpGet]
         public IActionResult DeleteTask(string taskName)
         {
-            Task taskToDelete = _taskSubmissionContext.tasks.Single(x => x.task == taskName);
+            Task taskToDelete = _taskSubmissionContext.tasks.Single(x => x.TaskName == taskName);
             return View(taskToDelete);
         }
 
