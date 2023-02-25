@@ -32,17 +32,20 @@
             @foreach (var x in Model)
             {
                 @if (x.quadrant == 1)
-                {
+                {        
+                    <div>
+                    <label>Complete?</label>
+                    <input type="checkbox" value="@x.completed"><br />
                     @if (x.completed == false)
                     {
-                    <div>
                         <p>
-                            @x.TaskName | Due: @x.dueDate |
-                            <a asp-controller="Home" asp-action="AddEdit" asp-route-id="@x.TaskId">Edit</a> |
-                            <a asp-controller="Home" asp-action="DeleteTask" asp-route-id="@x.TaskId">Delete</a>
+                            @x.TaskName | Category: @x.Category.categoryName | Due: @x.dueDate |
+                            <a asp-controller="Home" asp-action="AddEdit" asp-route-taskName="@x.TaskName">Edit</a> |
+                            <a asp-controller="Home" asp-action="DeleteTask" asp-route-taskName="@x.TaskName">Delete</a>
                         </p>
-                    </div>
                     }
+                    </div>
+                    
                 }
             }
         </div>
@@ -57,7 +60,7 @@
                     {
                         <div>
                             <p>
-                                @x.TaskName | Due: @x.dueDate |
+                                @x.TaskName | Category: @x.Category.categoryName | Due: @x.dueDate |
                                 <a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a> |
                                 <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
                             </p>
@@ -82,7 +85,7 @@
                     {
                         <div>
                             <p>
-                                @x.TaskName | Due: @x.dueDate |
+                                @x.TaskName | Category: @x.Category.categoryName | Due: @x.dueDate |
                                 <a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a> |
                                 <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
                             </p>
@@ -102,7 +105,7 @@
                     {
                         <div>
                             <p>
-                                @x.TaskName | Due: @x.dueDate |
+                                @x.TaskName | Category: @x.Category.categoryName | Due: @x.dueDate |
                                 <a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a> |
                                 <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
                             </p>
