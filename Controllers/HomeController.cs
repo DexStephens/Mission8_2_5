@@ -33,6 +33,7 @@ namespace Mission8_2_5.Controllers
         [HttpGet]
         public IActionResult AddEdit(string? taskName)
         {
+            ViewBag.Categories = _taskSubmissionContext.categories.ToList();
             var task = new Task();
             if (taskName != null)
             {
@@ -63,6 +64,7 @@ namespace Mission8_2_5.Controllers
             }
             else
             {
+                ViewBag.Categories = _taskSubmissionContext.tasks.ToList();
                 return View("AddEdit", task);
             }
         }
